@@ -34,16 +34,16 @@ stages:
     params:
       params.yaml:
         model:
-          n_estimators: 100
-          max_depth: 5
+          n_estimators: 200
+          max_depth: 10
         train:
           test_size: 0.2
           random_state: 42
     outs:
     - path: models/model.pkl
       hash: md5
-      md5: cec3eedfa15c4a2872cdc822090608b3
-      size: 153700
+      md5: 11bc120801da43ea159f9e04eaf70b37
+      size: 317167
   evaluate:
     cmd: python src/evaluate.py
     deps:
@@ -53,8 +53,8 @@ stages:
       size: 648
     - path: models/model.pkl
       hash: md5
-      md5: cec3eedfa15c4a2872cdc822090608b3
-      size: 153700
+      md5: 11bc120801da43ea159f9e04eaf70b37
+      size: 317167
     - path: src/evaluate.py
       hash: md5
       md5: c7ee5d20f07a12660d1dc48f2a7930c5
@@ -62,5 +62,5 @@ stages:
     outs:
     - path: metrics/metrics.json
       hash: md5
-      md5: f7dcf40e624ba322e979eefca1362062
-      size: 150
+      md5: 6b738c5a52e81387bbf3796f63492703
+      size: 120
